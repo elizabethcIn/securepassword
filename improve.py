@@ -18,13 +18,13 @@ if len(password) >= 15:
 else:
     print ("longitud incorrecta")
 for letra in password:
-    if  letra in "capitalletters" :
+    if  letra in "capitalletters":
      capitalletters = True
-    if  letra in "lowercase" :
+    if  letra in "lowercase":
      lowercase = True
-    if letra in "number" :
+    if letra in "number":
      number = True
-    if letra in "special" :
+    if letra in "special":
      special = True
 
 desire_length = 16
@@ -45,7 +45,7 @@ while attemps < max_attemps:
     )
     
     all_characters = []
-    for char_set in character_sets:
+    for char_sets in character_sets:
         for character in character_sets:
             all_characters.append(character)   
     
@@ -55,7 +55,7 @@ while attemps < max_attemps:
        character_types = {
          "capitalletters" : character_sets[0],
          "lowercase" : character_sets[1],
-         "number" : character_sets[1],
+         "numbers" : character_sets[2],
          "special" : character_sets[3],
          }
        
@@ -75,14 +75,14 @@ print(f"Length:{len(secure_password)}characters")
 type_counts =  {"capitalletters" : 0, "lowercase": 0, "numbers": 0, "special": 0}
 
 for character in secure_password:
-    if  character in character_types["capitalletters"]:
-     type_counts["capitalletters"] += 1 
+    if character in character_types["capitalletters"]:
+     type_counts["capitalletters"]+=1
     elif character in character_types["lowercase"]:
-     type_counts["lowercase"] += 1 
+     type_counts["lowercase"]+=1
     elif character in character_types["numbers"]:
-     type_counts["numbers"] += 1 
-    elif  character in character_types["special"]:
-     type_counts["special"] += 1 
+     type_counts["numbers"]+=1
+    elif character in character_types["special"]:
+     type_counts["special"]+=1
 
 print("\nCharacter distribution:")
 count_items = list(type_counts.items())
